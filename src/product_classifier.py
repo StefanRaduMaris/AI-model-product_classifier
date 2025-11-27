@@ -28,8 +28,9 @@ df = df.rename(columns={
 "Mechant Rating":"Merchant Rating",
 "Listing Date":"Listing Date",
 })
-df.to_csv("products.csv", index=False)
+df.to_csv("data/products_clear.csv", index=False)
 
+df = pd.read_csv('data/products_clear.csv')
 df = df.replace("Freezers", "Fridge Freezers").replace('fridge', 'Fridge Freezers').replace('Fridges',"Fridge Freezers")
 df=df.replace('Mobile Phone', 'Mobile Phones').replace('CPU', 'CPUs')
 
